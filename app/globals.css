@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-deep:  #0A1F5C;
+  --brand-tech:  #185FA5;
+  --brand-ice:   #E8EFF8;
+  --brand-red:   #C8102E;
+  --brand-light: #F4F6FA;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-sora);
+    font-weight: 700;
+  }
+
+  body {
+    font-family: var(--font-dm);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
+  .animate-delay-500 { animation-delay: 500ms; }
+
+  .opacity-0-initial {
+    opacity: 0;
+  }
+}
+
+/* Pixel scatter background */
+.pixel-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.pixel-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(24,95,165,0.15) 1px, transparent 1px),
+    radial-gradient(circle, rgba(200,16,46,0.1) 1px, transparent 1px);
+  background-size: 40px 40px, 80px 80px;
+  background-position: 0 0, 20px 20px;
+  pointer-events: none;
+}
+
+/* Section padding */
+.section-pad {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+@media (min-width: 768px) {
+  .section-pad {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--brand-light); }
+::-webkit-scrollbar-thumb { background: var(--brand-tech); border-radius: 3px; }

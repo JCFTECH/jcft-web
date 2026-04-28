@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "services": "Servicios",
+    "about": "Nosotros",
+    "portfolio": "Portafolio",
+    "contact": "Contacto",
+    "cta": "Hablemos"
+  },
+  "hero": {
+    "tag": "Innovación Digital · Costa Rica",
+    "title": "Soluciones digitales que",
+    "titleAccent": "realmente funcionan",
+    "subtitle": "Desarrollo web, software a medida y automatizaciones para empresas que quieren crecer sin complicaciones tecnológicas.",
+    "cta": "Ver servicios",
+    "ctaSecondary": "Conocenos",
+    "badge": "Empresa costarricense registrada"
+  },
+  "services": {
+    "tag": "Qué hacemos",
+    "title": "Servicios",
+    "subtitle": "Dos ingenieros. Soluciones concretas.",
+    "web": {
+      "title": "Desarrollo Web",
+      "desc": "Sitios y aplicaciones web modernas, rápidas y optimizadas para móvil. Desde landing pages hasta plataformas complejas."
+    },
+    "software": {
+      "title": "Software a Medida",
+      "desc": "Sistemas diseñados exactamente para tu operación. Sin funciones que no usás, sin limitaciones que te frenen."
+    },
+    "automation": {
+      "title": "Automatizaciones",
+      "desc": "Conectamos tus herramientas, eliminamos procesos repetitivos y convertimos horas de trabajo manual en segundos."
+    },
+    "consulting": {
+      "title": "Consultoría Tech",
+      "desc": "Si no sabés por dónde empezar, empezamos con una conversación. Te ayudamos a elegir las herramientas correctas."
+    }
+  },
+  "about": {
+    "tag": "Quiénes somos",
+    "title": "Dos ingenieros con una sola meta",
+    "subtitle": "Hacer que la tecnología trabaje para vos, no al revés.",
+    "body": "JCF Tech nació en Costa Rica con la convicción de que las pequeñas y medianas empresas merecen acceso a soluciones tecnológicas de calidad, sin los precios ni la burocracia de las grandes consultoras.",
+    "body2": "Somos directos, técnicamente precisos y comprometidos con los resultados. Cuando tomamos un proyecto, lo entregamos.",
+    "stat1": "Proyectos entregados",
+    "stat2": "Años de experiencia",
+    "stat3": "Clientes satisfechos",
+    "location": "Palmares, Alajuela, Costa Rica"
+  },
+  "portfolio": {
+    "tag": "Nuestro trabajo",
+    "title": "Portafolio",
+    "subtitle": "Proyectos que hablan por sí solos.",
+    "empty": "Proyectos en camino. Volvé pronto.",
+    "viewMore": "Ver más"
+  },
+  "contact": {
+    "tag": "Escribinos",
+    "title": "¿Tenés un proyecto en mente?",
+    "subtitle": "Contanos qué necesitás y te respondemos en menos de 24 horas.",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "company": "Empresa (opcional)",
+    "message": "Mensaje",
+    "messagePlaceholder": "Contanos sobre tu proyecto...",
+    "send": "Enviar mensaje",
+    "sending": "Enviando...",
+    "success": "Mensaje enviado. Te contactamos pronto.",
+    "error": "Algo salió mal. Intentá de nuevo.",
+    "or": "O escribinos directo",
+    "phone": "+506 8969-0102"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados.",
+    "legal": "Cédula Jurídica: 3-102-935084"
+  }
+}
