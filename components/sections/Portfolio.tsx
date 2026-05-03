@@ -1,30 +1,70 @@
 'use client'
 
-import { useTranslations } from 'next-intl'
-import { ExternalLink } from 'lucide-react'
+import { useTranslations, useLocale } from 'next-intl'
+import { ExternalLink, Lock } from 'lucide-react'
 import { motion } from 'framer-motion'
 import SectionTag from '@/components/ui/SectionTag'
 
-// Add your projects here when ready
-const projects: {
-  title: string
-  desc: string
-  tags: string[]
-  url?: string
-  color: string
-}[] = [
-  // Example structure:
-  // {
-  //   title: 'Sistema de Gestión',
-  //   desc: 'Plataforma web para gestión de inventario y ventas.',
-  //   tags: ['Next.js', 'PostgreSQL', 'Tailwind'],
-  //   url: 'https://...',
-  //   color: '#0A1F5C',
-  // },
+const projects = [
+  {
+    id: 'autolimar',
+    name: 'Autolimar Soluciones',
+    logo: '/images/portfolio/autolimar.jpg',
+    logoBg: '#ffffff',
+    invert: false,
+    category: { es: 'Sistema de Escritorio', en: 'Desktop Application' },
+    desc: {
+      es: 'Sistema de gestión integral para taller automotriz. Desarrollado en C# con MySQL, incluye órdenes de trabajo, inventario, vehículos, roles de usuario y backup automático a OneDrive.',
+      en: 'Complete management system for an automotive workshop. Built with C# and MySQL, featuring work orders, inventory, vehicle management, user roles and automatic OneDrive backup.',
+    },
+    tags: ['C#', 'MySQL', 'Desktop', 'WinForms'],
+    color: '#0A1F5C',
+    accentColor: '#C8102E',
+    url: null,
+    status: { es: 'En producción', en: 'In production' },
+    restricted: false,
+  },
+  {
+    id: 'aresa-web',
+    name: 'ARESA — Sitio Web',
+    logo: '/images/portfolio/aresa.jpg',
+    logoBg: 'transparent',
+    invert: false,
+    category: { es: 'Sitio Web Corporativo', en: 'Corporate Website' },
+    desc: {
+      es: 'Sitio web corporativo bilingüe para empresa de reparaciones estructurales de aeronaves en Costa Rica. Certificación CO OMA-045, con galería, servicios y blog.',
+      en: 'Bilingual corporate website for an aircraft structural repair company in Costa Rica. CO OMA-045 certified, with gallery, services and blog.',
+    },
+    tags: ['Next.js', 'TypeScript', 'Tailwind', 'i18n'],
+    color: '#1a1a2e',
+    accentColor: '#f0a500',
+    url: 'https://aresacr.net',
+    status: { es: 'Próximamente en vivo', en: 'Going live soon' },
+    restricted: false,
+  },
+  {
+    id: 'aresa-sys',
+    name: 'ARESA — Sistema Interno',
+    logo: '/images/portfolio/aresa.jpg',
+    logoBg: 'transparent',
+    invert: false,
+    category: { es: 'Sistema de Gestión Web', en: 'Web Management System' },
+    desc: {
+      es: 'Sistema interno integrado al sitio de ARESA. Dashboard operativo, órdenes de trabajo para aeronaves, inventario, manuales técnicos y control de calibración de herramientas.',
+      en: 'Internal system integrated into the ARESA website. Operational dashboard, aircraft work orders, inventory, technical manuals and tool calibration control.',
+    },
+    tags: ['Next.js', 'PostgreSQL', 'Auth', 'Dashboard'],
+    color: '#0f2d5e',
+    accentColor: '#f0a500',
+    url: 'https://aresacr.net',
+    status: { es: 'Acceso restringido', en: 'Restricted access' },
+    restricted: true,
+  },
 ]
 
 export default function Portfolio() {
   const t = useTranslations('portfolio')
+  const locale = useLocale() as 'es' | 'en'
 
   return (
     <section id="portfolio" className="section-pad bg-white">
@@ -38,66 +78,126 @@ export default function Portfolio() {
           <p className="text-gray-500 text-lg">{t('subtitle')}</p>
         </div>
 
-        {projects.length === 0 ? (
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="flex flex-col items-center justify-center py-24 border-2 border-dashed border-gray-200 rounded-3xl"
-          >
-            <div className="w-16 h-16 bg-brand-ice rounded-2xl flex items-center justify-center font-sora font-black text-brand-deep text-xl mb-4">
-              JT
-            </div>
-            <p className="text-gray-400 font-medium">{t('empty')}</p>
-          </motion.div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((p, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="group bg-brand-light rounded-2xl overflow-hidden border border-gray-100 hover:border-brand-tech/30 hover:shadow-lg transition-all duration-300"
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((p, i) => (
+            <motion.div
+              key={p.id}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="group bg-brand-light rounded-2xl overflow-hidden border border-gray-100 hover:border-brand-tech/30 hover:shadow-xl hover:shadow-brand-deep/5 transition-all duration-300 flex flex-col"
+            >
+              {/* Card header con logo */}
+              <div
+                className="h-44 flex items-center justify-center p-6 relative overflow-hidden"
+                style={{ background: p.color }}
               >
+                {/* Dot pattern */}
                 <div
-                  className="h-40 flex items-center justify-center"
-                  style={{ background: p.color }}
+                  className="absolute inset-0 opacity-10"
+                  style={{
+                    backgroundImage: 'radial-gradient(circle, rgba(255,255,255,.8) 1px, transparent 1px)',
+                    backgroundSize: '20px 20px',
+                  }}
+                />
+
+                {/* Accent top bar */}
+                <div
+                  className="absolute top-0 left-0 right-0 h-1"
+                  style={{ background: p.accentColor }}
+                />
+
+                {/* Logo — mismo tamaño para todos */}
+                <div
+                  className="relative z-10 rounded-xl flex items-center justify-center"
+                  style={{
+                    background: p.logoBg,
+                    width: '160px',
+                    height: '160px',
+                    padding: p.logoBg === '#ffffff' ? '12px' : '0px',
+                  }}
                 >
-                  <span className="font-sora font-black text-white text-3xl opacity-20">
-                    JT
-                  </span>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={p.logo}
+                    alt={p.name}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'contain',
+                    }}
+                  />
                 </div>
-                <div className="p-6">
-                  <h3 className="font-sora font-bold text-brand-deep text-lg mb-2">{p.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-4">{p.desc}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {p.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs bg-brand-ice text-brand-tech font-medium px-2.5 py-1 rounded-lg"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  {p.url && (
-                    <a
-                      href={p.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-brand-tech text-sm font-medium hover:text-brand-deep transition-colors"
+
+                {/* Status badge */}
+                <div
+                  className="absolute bottom-3 right-3 z-10 flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full"
+                  style={{
+                    background: `${p.accentColor}22`,
+                    color: p.accentColor,
+                    border: `1px solid ${p.accentColor}44`,
+                  }}
+                >
+                  {p.restricted && <Lock size={10} />}
+                  {p.status[locale]}
+                </div>
+              </div>
+
+              {/* Card body */}
+              <div className="p-6 flex flex-col flex-1">
+                <p className="text-xs font-semibold uppercase tracking-widest text-brand-tech mb-1">
+                  {p.category[locale]}
+                </p>
+                <h3 className="font-sora font-bold text-brand-deep text-lg mb-3">
+                  {p.name}
+                </h3>
+                <p className="text-gray-500 text-sm leading-relaxed mb-5 flex-1">
+                  {p.desc[locale]}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {p.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs bg-brand-ice text-brand-tech font-medium px-2.5 py-1 rounded-lg"
                     >
-                      {t('viewMore')}
-                      <ExternalLink size={13} />
-                    </a>
-                  )}
+                      {tag}
+                    </span>
+                  ))}
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        )}
+
+                {p.url && (
+                  <a
+                    href={p.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-brand-tech text-sm font-medium hover:text-brand-deep transition-colors"
+                  >
+                    {locale === 'es' ? 'Ver proyecto' : 'View project'}
+                    <ExternalLink size={13} />
+                  </a>
+                )}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="text-center text-gray-400 text-sm mt-12"
+        >
+          {locale === 'es' ? '¿Tenés un proyecto en mente? ' : 'Have a project in mind? '}
+          <a
+            href="#contact"
+            className="text-brand-tech hover:text-brand-deep font-medium transition-colors"
+          >
+            {locale === 'es' ? 'Hablemos.' : "Let's talk."}
+          </a>
+        </motion.p>
+
       </div>
     </section>
   )
