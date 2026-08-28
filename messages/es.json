@@ -1,6 +1,7 @@
 {
   "nav": {
     "services": "Servicios",
+    "process": "Proceso",
     "about": "Nosotros",
     "portfolio": "Portafolio",
     "contact": "Contacto",
@@ -8,44 +9,97 @@
   },
   "hero": {
     "tag": "Innovación Digital · Costa Rica",
-    "title": "Soluciones digitales que",
-    "titleAccent": "realmente funcionan",
-    "subtitle": "Desarrollo web, software a medida y automatizaciones para empresas que quieren crecer sin complicaciones tecnológicas.",
-    "cta": "Ver servicios",
-    "ctaSecondary": "Conocenos",
-    "badge": "Empresa costarricense registrada"
+    "title": "Tenés una necesidad.",
+    "titleAccent": "Nosotros la resolvemos.",
+    "subtitle": "Antes de escribir una sola línea de código, entendemos tu operación, tus tiempos y lo que realmente necesitás. Después construimos.",
+    "cta": "Contanos tu proyecto",
+    "ctaSecondary": "Ver servicios",
+    "badge": "Empresa costarricense registrada",
+    "badgeDelivery": "Entrega puntual",
+    "badgeProcess": "Sin plantillas",
+    "prop1Title": "Primero escuchamos",
+    "prop1Desc": "No llegamos con una solución predefinida. Entendemos tu negocio antes de proponer cualquier cosa.",
+    "prop2Title": "Construimos a tu medida",
+    "prop2Desc": "Cada proyecto es único. Sin plantillas, sin funciones que no vas a usar, sin limitaciones artificiales.",
+    "prop3Title": "Entregamos y acompañamos",
+    "prop3Desc": "No desaparecemos al entregar. Seguimos con vos en la puesta en marcha y el soporte."
   },
   "services": {
     "tag": "Qué hacemos",
     "title": "Servicios",
-    "subtitle": "Dos ingenieros. Soluciones concretas.",
+    "subtitle": "Dos ingenieros enfocados en entender antes de construir.",
+    "askMore": "Consultanos",
+    "ctaBannerTitle": "¿No encontrás lo que necesitás?",
+    "ctaBannerDesc": "Si tu necesidad no encaja en ninguna categoría, hablemos igual. Probablemente lo podemos resolver.",
+    "ctaBannerBtn": "Hablemos",
     "web": {
       "title": "Desarrollo Web",
-      "desc": "Sitios y aplicaciones web modernas, rápidas y optimizadas para móvil. Desde landing pages hasta plataformas complejas."
+      "problem": "¿Tu negocio no tiene presencia digital o la que tiene no genera resultados?",
+      "desc": "Sitios y aplicaciones web modernas, rápidas y optimizadas. Desde una landing page hasta plataformas complejas con panel de administración.",
+      "feature1": "Diseño adaptado a tu marca",
+      "feature2": "Optimizado para móvil y buscadores",
+      "feature3": "Panel de administración incluido si lo necesitás"
     },
     "software": {
       "title": "Software a Medida",
-      "desc": "Sistemas diseñados exactamente para tu operación. Sin funciones que no usás, sin limitaciones que te frenen."
+      "problem": "¿Estás usando Excel o WhatsApp para gestionar tu operación?",
+      "desc": "Sistemas diseñados exactamente para tu flujo de trabajo. Sin pagar por funciones que no usás y sin adaptarte a lo que una plantilla permite.",
+      "feature1": "Análisis de tu operación actual",
+      "feature2": "Sistema diseñado para tu equipo",
+      "feature3": "Capacitación y soporte incluidos"
     },
     "automation": {
       "title": "Automatizaciones",
-      "desc": "Conectamos tus herramientas, eliminamos procesos repetitivos y convertimos horas de trabajo manual en segundos."
+      "problem": "¿Tu equipo pierde horas en tareas repetitivas que podrían hacerse solas?",
+      "desc": "Conectamos tus herramientas, eliminamos procesos manuales y liberamos tiempo de tu equipo para lo que realmente importa.",
+      "feature1": "Diagnóstico de procesos actuales",
+      "feature2": "Integración entre herramientas existentes",
+      "feature3": "Ahorro de tiempo medible desde el día uno"
     },
     "consulting": {
       "title": "Consultoría Tech",
-      "desc": "Si no sabés por dónde empezar, empezamos con una conversación. Te ayudamos a elegir las herramientas correctas."
+      "problem": "¿Sabés que necesitás tecnología pero no sabés por dónde empezar?",
+      "desc": "Te ayudamos a entender tus opciones, elegir las herramientas correctas y trazar un camino claro antes de invertir en desarrollo.",
+      "feature1": "Análisis sin compromiso de compra",
+      "feature2": "Recomendaciones honestas y justificadas",
+      "feature3": "Hoja de ruta concreta y ejecutable"
     }
+  },
+  "process": {
+    "tag": "Cómo trabajamos",
+    "title": "Primero entendemos,\ndespués construimos.",
+    "subtitle": "Cada proyecto sigue un proceso claro. Sin sorpresas, sin improvisaciones.",
+    "discover": {
+      "title": "Descubrimiento",
+      "desc": "Te escuchamos. Entendemos tu negocio, tu operación y lo que realmente necesitás resolver antes de hablar de tecnología."
+    },
+    "plan": {
+      "title": "Propuesta",
+      "desc": "Presentamos un plan claro: qué se va a construir, cómo y en qué tiempos. Sin letra chica ni compromisos vagos."
+    },
+    "build": {
+      "title": "Desarrollo",
+      "desc": "Construimos con foco en los detalles. Te mantenemos informado en cada etapa para que nunca haya sorpresas al final."
+    },
+    "deliver": {
+      "title": "Entrega y soporte",
+      "desc": "Entregamos, capacitamos y acompañamos. No desaparecemos cuando el proyecto termina."
+    },
+    "noteTitle": "Los tiempos varían según el proyecto.",
+    "noteDesc": "No trabajamos con plazos inventados solo para cerrar un trato. Cada estimación se basa en el alcance real de tu necesidad."
   },
   "about": {
     "tag": "Quiénes somos",
-    "title": "Dos ingenieros con una sola meta",
-    "subtitle": "Hacer que la tecnología trabaje para vos, no al revés.",
-    "body": "JCF Tech nació en Costa Rica con la convicción de que las pequeñas y medianas empresas merecen acceso a soluciones tecnológicas de calidad, sin los precios ni la burocracia de las grandes consultoras.",
-    "body2": "Somos directos, técnicamente precisos y comprometidos con los resultados. Cuando tomamos un proyecto, lo entregamos.",
+    "title": "Entendemos tu negocio.\nDespués construimos.",
+    "subtitle": "No llegamos con una solución predefinida. Nos involucramos en tus procesos.",
+    "body": "JCF Tech nació de una convicción simple: las empresas no necesitan tecnología genérica, necesitan soluciones que reflejen cómo operan, cómo piensan y qué quieren proyectar.",
+    "body2": "Antes de proponer cualquier cosa, entendemos tu negocio. Tus procesos, tu equipo, tu cliente. Solo entonces construimos, ya sea un sistema a medida, una plataforma web o una automatización — hecha para vos, no adaptada de una plantilla.",
     "stat1": "Proyectos entregados",
     "stat2": "Años de experiencia",
     "stat3": "Clientes satisfechos",
-    "location": "Palmares, Alajuela, Costa Rica"
+    "location": "Palmares, Alajuela, Costa Rica",
+    "caligaTag": "Producto propio",
+    "caligaDesc": "También somos creadores de CALIGA, plataforma SaaS de gestión aeronáutica con trazabilidad completa para operadores de aviación en Latinoamérica."
   },
   "portfolio": {
     "tag": "Nuestro trabajo",
@@ -57,12 +111,12 @@
   "contact": {
     "tag": "Escribinos",
     "title": "¿Tenés un proyecto en mente?",
-    "subtitle": "Contanos qué necesitás y te respondemos en menos de 24 horas.",
+    "subtitle": "Contanos qué necesitás y te respondemos en menos de 24 horas. Sin compromiso, sin presión.",
     "name": "Nombre",
     "email": "Correo electrónico",
     "company": "Empresa (opcional)",
-    "message": "Mensaje",
-    "messagePlaceholder": "Contanos sobre tu proyecto...",
+    "message": "¿Qué necesitás resolver?",
+    "messagePlaceholder": "Contanos sobre tu proyecto o la necesidad que querés resolver...",
     "send": "Enviar mensaje",
     "sending": "Enviando...",
     "success": "Mensaje enviado. Te contactamos pronto.",

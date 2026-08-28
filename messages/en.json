@@ -1,6 +1,7 @@
 {
   "nav": {
     "services": "Services",
+    "process": "Process",
     "about": "About",
     "portfolio": "Portfolio",
     "contact": "Contact",
@@ -8,44 +9,97 @@
   },
   "hero": {
     "tag": "Digital Innovation · Costa Rica",
-    "title": "Digital solutions that",
-    "titleAccent": "actually work",
-    "subtitle": "Web development, custom software and automations for businesses that want to grow without technology headaches.",
-    "cta": "Our services",
-    "ctaSecondary": "About us",
-    "badge": "Registered Costa Rican company"
+    "title": "You have a need.",
+    "titleAccent": "We solve it.",
+    "subtitle": "Before writing a single line of code, we understand your operation, your timeline and what you actually need. Then we build.",
+    "cta": "Tell us about your project",
+    "ctaSecondary": "Our services",
+    "badge": "Registered Costa Rican company",
+    "badgeDelivery": "On-time delivery",
+    "badgeProcess": "No templates",
+    "prop1Title": "We listen first",
+    "prop1Desc": "We don't arrive with a predefined solution. We understand your business before proposing anything.",
+    "prop2Title": "We build to your measure",
+    "prop2Desc": "Every project is unique. No templates, no features you won't use, no artificial limitations.",
+    "prop3Title": "We deliver and stay",
+    "prop3Desc": "We don't disappear after delivery. We stay with you through launch and beyond."
   },
   "services": {
     "tag": "What we do",
     "title": "Services",
-    "subtitle": "Two engineers. Concrete solutions.",
+    "subtitle": "Two engineers focused on understanding before building.",
+    "askMore": "Ask us",
+    "ctaBannerTitle": "Can't find what you need?",
+    "ctaBannerDesc": "If your need doesn't fit any category, reach out anyway. We can probably help.",
+    "ctaBannerBtn": "Let's talk",
     "web": {
       "title": "Web Development",
-      "desc": "Modern, fast and mobile-optimized websites and web apps. From landing pages to complex platforms."
+      "problem": "Does your business lack a digital presence, or is it not generating results?",
+      "desc": "Modern, fast and optimized websites and web apps. From a landing page to complex platforms with an admin panel.",
+      "feature1": "Design adapted to your brand",
+      "feature2": "Mobile and SEO optimized",
+      "feature3": "Admin panel included if needed"
     },
     "software": {
       "title": "Custom Software",
-      "desc": "Systems designed exactly for your operation. No unused features, no limitations holding you back."
+      "problem": "Are you using Excel or WhatsApp to manage your operation?",
+      "desc": "Systems designed exactly for your workflow. No paying for features you don't use and no adapting to what a template allows.",
+      "feature1": "Analysis of your current operation",
+      "feature2": "System designed for your team",
+      "feature3": "Training and support included"
     },
     "automation": {
       "title": "Automations",
-      "desc": "We connect your tools, eliminate repetitive processes and turn hours of manual work into seconds."
+      "problem": "Is your team losing hours on repetitive tasks that could run themselves?",
+      "desc": "We connect your tools, eliminate manual processes and free your team's time for what actually matters.",
+      "feature1": "Diagnosis of current processes",
+      "feature2": "Integration between existing tools",
+      "feature3": "Measurable time savings from day one"
     },
     "consulting": {
       "title": "Tech Consulting",
-      "desc": "If you don't know where to start, we start with a conversation. We help you choose the right tools."
+      "problem": "Do you know you need technology but don't know where to start?",
+      "desc": "We help you understand your options, choose the right tools and chart a clear path before investing in development.",
+      "feature1": "Analysis with no purchase commitment",
+      "feature2": "Honest and justified recommendations",
+      "feature3": "Concrete and executable roadmap"
     }
+  },
+  "process": {
+    "tag": "How we work",
+    "title": "We understand first,\nthen we build.",
+    "subtitle": "Every project follows a clear process. No surprises, no improvisation.",
+    "discover": {
+      "title": "Discovery",
+      "desc": "We listen. We understand your business, your operation and what you actually need to solve before talking technology."
+    },
+    "plan": {
+      "title": "Proposal",
+      "desc": "We present a clear plan: what will be built, how and on what timeline. No fine print, no vague commitments."
+    },
+    "build": {
+      "title": "Development",
+      "desc": "We build with attention to detail. We keep you informed at every stage so there are never surprises at the end."
+    },
+    "deliver": {
+      "title": "Delivery & support",
+      "desc": "We deliver, train and stay alongside you. We don't disappear when the project is done."
+    },
+    "noteTitle": "Timelines vary by project.",
+    "noteDesc": "We don't work with invented deadlines just to close a deal. Every estimate is based on the real scope of your need."
   },
   "about": {
     "tag": "Who we are",
-    "title": "Two engineers, one goal",
-    "subtitle": "Making technology work for you, not the other way around.",
-    "body": "JCF Tech was founded in Costa Rica with the conviction that small and medium businesses deserve access to quality technology solutions, without the prices or bureaucracy of large consulting firms.",
-    "body2": "We are direct, technically precise and committed to results. When we take on a project, we deliver it.",
+    "title": "We understand your business.\nThen we build.",
+    "subtitle": "We don't arrive with a predefined solution. We get involved in your processes.",
+    "body": "JCF Tech was born from a simple conviction: businesses don't need generic technology, they need solutions that reflect how they operate, how they think and what they want to project.",
+    "body2": "Before proposing anything, we understand your business. Your processes, your team, your customer. Only then do we build — whether it's a custom system, a web platform or an automation — made for you, not adapted from a template.",
     "stat1": "Projects delivered",
     "stat2": "Years of experience",
     "stat3": "Happy clients",
-    "location": "Palmares, Alajuela, Costa Rica"
+    "location": "Palmares, Alajuela, Costa Rica",
+    "caligaTag": "Own product",
+    "caligaDesc": "We are also the creators of CALIGA, an aeronautical management SaaS platform with full traceability for aviation operators in Latin America."
   },
   "portfolio": {
     "tag": "Our work",
@@ -57,12 +111,12 @@
   "contact": {
     "tag": "Reach out",
     "title": "Have a project in mind?",
-    "subtitle": "Tell us what you need and we'll get back to you within 24 hours.",
+    "subtitle": "Tell us what you need and we'll get back to you within 24 hours. No commitment, no pressure.",
     "name": "Name",
     "email": "Email address",
     "company": "Company (optional)",
-    "message": "Message",
-    "messagePlaceholder": "Tell us about your project...",
+    "message": "What do you need to solve?",
+    "messagePlaceholder": "Tell us about your project or the need you want to resolve...",
     "send": "Send message",
     "sending": "Sending...",
     "success": "Message sent. We'll be in touch soon.",

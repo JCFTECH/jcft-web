@@ -1,7 +1,7 @@
 'use client'
 
-import { useTranslations } from 'next-intl'
-import { MapPin } from 'lucide-react'
+import { useTranslations, useLocale } from 'next-intl'
+import { MapPin, ExternalLink } from 'lucide-react'
 import { motion } from 'framer-motion'
 import SectionTag from '@/components/ui/SectionTag'
 
@@ -13,6 +13,7 @@ const stats = [
 
 export default function About() {
   const t = useTranslations('about')
+  const locale = useLocale()
 
   return (
     <section id="about" className="section-pad bg-brand-deep pixel-bg overflow-hidden">
@@ -33,6 +34,35 @@ export default function About() {
             <p className="text-brand-red font-medium text-lg mb-6">{t('subtitle')}</p>
             <p className="text-white/60 leading-relaxed mb-4">{t('body')}</p>
             <p className="text-white/60 leading-relaxed mb-8">{t('body2')}</p>
+
+            {/* CALIGA mention */}
+            <motion.a
+              href="https://www.mycaliga.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="group flex items-start gap-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-brand-tech/40 rounded-2xl p-5 transition-all duration-300 mb-8"
+            >
+              <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span className="text-white font-sora font-black text-xs">CAL</span>
+              </div>
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-1">
+                  <p className="font-sora font-bold text-white text-sm">CALIGA</p>
+                  <span className="text-xs bg-brand-tech/30 text-brand-ice px-2 py-0.5 rounded-full">
+                    {t('caligaTag')}
+                  </span>
+                </div>
+                <p className="text-white/50 text-sm leading-relaxed">{t('caligaDesc')}</p>
+                <div className="flex items-center gap-1.5 mt-2 text-brand-tech text-xs font-medium group-hover:text-white transition-colors">
+                  mycaliga.com <ExternalLink size={11} />
+                </div>
+              </div>
+            </motion.a>
+
             <div className="flex items-center gap-2 text-white/30 text-sm">
               <MapPin size={14} className="text-brand-red" />
               {t('location')}
@@ -73,7 +103,9 @@ export default function About() {
                   <p className="font-sora font-black text-white text-xl">
                     JCF<span className="text-brand-red">T</span>ECH
                   </p>
-                  <p className="text-white/30 text-xs tracking-widest">INNOVACIÓN DIGITAL</p>
+                  <p className="text-white/30 text-xs tracking-widest">
+                    {locale === 'es' ? 'INNOVACIÓN DIGITAL' : 'DIGITAL INNOVATION'}
+                  </p>
                 </div>
               </div>
             </div>

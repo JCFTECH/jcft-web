@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-const navLinks = ['services', 'about', 'portfolio', 'contact'] as const
+const navLinks = ['services', 'process', 'about', 'portfolio', 'contact'] as const
 
 export default function Navbar() {
   const t = useTranslations('nav')
@@ -43,7 +43,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           {navLinks.map((key) => (
             <a
               key={key}
