@@ -44,8 +44,8 @@ const projects = [
   {
     id: 'aresa',
     name: 'ARESA S.A.',
-    logo: '/images/portfolio/aresa.jpg',
-    logoBg: 'transparent',
+    logo: '/images/portfolio/aresa_logo.png',
+    logoBg: '#ffffff',
     hasGallery: false,
     screenshots: [],
     category: { es: 'Web + Sistema Interno', en: 'Web + Internal System' },
@@ -68,8 +68,8 @@ const projects = [
   {
     id: 'caliga',
     name: 'CALIGA',
-    logo: null,
-    logoBg: 'transparent',
+    logo: '/images/portfolio/caliga_logo.png',
+    logoBg: '#ffffff',
     hasGallery: false,
     screenshots: [],
     category: { es: 'Producto SaaS Propio', en: 'Own SaaS Product' },
