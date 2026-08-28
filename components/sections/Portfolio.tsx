@@ -44,8 +44,8 @@ const projects = [
   {
     id: 'aresa',
     name: 'ARESA S.A.',
-    logo: '/images/portfolio/aresa_logo.png',
-    logoBg: '#ffffff',
+    logo: '/images/portfolio/aresa.jpg',
+    logoBg: 'transparent',
     hasGallery: false,
     screenshots: [],
     category: { es: 'Web + Sistema Interno', en: 'Web + Internal System' },
@@ -68,8 +68,8 @@ const projects = [
   {
     id: 'caliga',
     name: 'CALIGA',
-    logo: '/images/portfolio/caliga_logo.png',
-    logoBg: '#ffffff',
+    logo: null,
+    logoBg: 'transparent',
     hasGallery: false,
     screenshots: [],
     category: { es: 'Producto SaaS Propio', en: 'Own SaaS Product' },
@@ -322,18 +322,19 @@ export default function Portfolio() {
                 />
                 <div className="absolute top-0 left-0 right-0 h-1" style={{ background: p.accentColor }} />
 
-                {/* Logo */}
-                <div
-                  className="relative z-10 rounded-xl flex items-center justify-center"
-                  style={{ background: p.logoBg, width: '160px', height: '160px', padding: '12px' }}
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={p.logo!}
-                    alt={p.name}
-                    style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-                  />
-                </div>
+                {/* Logo or text for CALIGA */}
+                {p.logo ? (
+                  <div className="relative z-10 rounded-xl flex items-center justify-center" style={{ background: p.logoBg, width: '160px', height: '160px' }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={p.logo} alt={p.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                  </div>
+                ) : (
+                  <div className="relative z-10 flex flex-col items-center justify-center">
+                    <span className="font-sora font-black text-white text-5xl tracking-tight">CALIGA</span>
+                    <span className="text-white/40 text-xs tracking-widest mt-1">AVIATION SaaS</span>
+                  </div>
+                )}
+
                 {/* Own product badge */}
                 {'isOwn' in p && p.isOwn && (
                   <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 bg-white/15 text-white text-xs font-medium px-2.5 py-1 rounded-full backdrop-blur-sm">
