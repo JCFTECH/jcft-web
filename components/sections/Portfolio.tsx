@@ -65,31 +65,6 @@ const projects = [
     restricted: false,
     featured: false,
   },
-  {
-    id: 'caliga',
-    name: 'CALIGA',
-    logo: '/images/portfolio/caliga_logo.png',
-    logoBg: '#ffffff',
-    hasGallery: false,
-    screenshots: [],
-    category: { es: 'Producto SaaS Propio', en: 'Own SaaS Product' },
-    impact: {
-      es: 'Plataforma construida desde cero para reemplazar Excel y procesos manuales en operaciones de aviación latinoamericanas.',
-      en: 'Platform built from scratch to replace Excel and manual processes in Latin American aviation operations.',
-    },
-    desc: {
-      es: 'Plataforma SaaS de gestión aeronáutica con trazabilidad completa. 10+ módulos: flotas, mantenimiento, inventario, SMS, cumplimiento regulatorio y más.',
-      en: 'Aeronautical management SaaS platform with full traceability. 10+ modules: fleets, maintenance, inventory, SMS, regulatory compliance and more.',
-    },
-    tags: ['SaaS', 'Multi-tenant', 'Next.js', 'Aviation'],
-    color: '#0c1a3a',
-    accentColor: '#3b82f6',
-    url: 'https://www.mycaliga.com',
-    status: { es: 'En desarrollo activo', en: 'Actively in development' },
-    restricted: false,
-    featured: false,
-    isOwn: true,
-  },
 ]
 
 type Project = typeof projects[0]
@@ -303,7 +278,7 @@ export default function Portfolio() {
         </motion.div>
 
         {/* Rest — two columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div className={`grid grid-cols-1 gap-6 mb-12 ${rest.length > 1 ? 'md:grid-cols-2' : 'md:max-w-2xl md:mx-auto'}`}>
           {rest.map((p, i) => (
             <motion.div
               key={p.id}
@@ -322,25 +297,10 @@ export default function Portfolio() {
                 />
                 <div className="absolute top-0 left-0 right-0 h-1" style={{ background: p.accentColor }} />
 
-                {/* Logo or text for CALIGA */}
-                {p.logo ? (
-                  <div className="relative z-10 rounded-xl flex items-center justify-center" style={{ background: p.logoBg, width: '160px', height: '160px' }}>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={p.logo} alt={p.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-                  </div>
-                ) : (
-                  <div className="relative z-10 flex flex-col items-center justify-center">
-                    <span className="font-sora font-black text-white text-5xl tracking-tight">CALIGA</span>
-                    <span className="text-white/40 text-xs tracking-widest mt-1">AVIATION SaaS</span>
-                  </div>
-                )}
-
-                {/* Own product badge */}
-                {'isOwn' in p && p.isOwn && (
-                  <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 bg-white/15 text-white text-xs font-medium px-2.5 py-1 rounded-full backdrop-blur-sm">
-                    ⭐ {locale === 'es' ? 'Producto propio' : 'Own product'}
-                  </div>
-                )}
+                <div className="relative z-10 rounded-xl flex items-center justify-center" style={{ background: p.logoBg, width: '160px', height: '160px' }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={p.logo} alt={p.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                </div>
 
                 <div
                   className="absolute bottom-3 right-3 z-10 flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full"
