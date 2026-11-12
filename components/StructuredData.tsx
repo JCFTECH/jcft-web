@@ -11,7 +11,7 @@ export default function StructuredData({ lang }: { lang: string }) {
       ? 'Empresa costarricense de desarrollo de software a medida, sitios web y automatizaciones para pymes y empresas.'
       : 'Costa Rican custom software development, web design and automation company for businesses.',
     url: 'https://www.jcfdev.com',
-    logo: 'https://www.jcfdev.com/images/portfolio/autolimar.jpg',
+    logo: 'https://www.jcfdev.com/images/jcftech-logo.png',
     image: 'https://www.jcfdev.com/og-image.png',
     telephone: '+50689690102',
     email: 'info@jcfdev.com',
@@ -24,11 +24,6 @@ export default function StructuredData({ lang }: { lang: string }) {
       addressLocality: 'Palmares',
       addressRegion: 'Alajuela',
       addressCountry: 'CR',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: '10.0484',
-      longitude: '-84.4285',
     },
     areaServed: [
       {
@@ -91,7 +86,7 @@ export default function StructuredData({ lang }: { lang: string }) {
     },
     sameAs: [
       'https://www.instagram.com/jcftech.cr',
-      'https://www.facebook.com/JCFTechSRL',
+      'https://www.facebook.com/share/1E2BL3RN4j/',
     ],
     inLanguage: isEs ? 'es-CR' : 'en',
   }

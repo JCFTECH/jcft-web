@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
-import { ExternalLink, Lock, X, ChevronLeft, ChevronRight, Images, ArrowRight } from 'lucide-react'
+import { ExternalLink, X, ChevronLeft, ChevronRight, Images, ArrowRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import SectionTag from '@/components/ui/SectionTag'
 
@@ -64,31 +64,6 @@ const projects = [
     status: { es: 'En producción', en: 'In production' },
     restricted: false,
     featured: false,
-  },
-  {
-    id: 'caliga',
-    name: 'CALIGA',
-    logo: '/images/portfolio/caliga_logo.png',
-    logoBg: '#ffffff',
-    hasGallery: false,
-    screenshots: [],
-    category: { es: 'Producto SaaS Propio', en: 'Own SaaS Product' },
-    impact: {
-      es: 'Plataforma construida desde cero para reemplazar Excel y procesos manuales en operaciones de aviación latinoamericanas.',
-      en: 'Platform built from scratch to replace Excel and manual processes in Latin American aviation operations.',
-    },
-    desc: {
-      es: 'Plataforma SaaS de gestión aeronáutica con trazabilidad completa. 10+ módulos: flotas, mantenimiento, inventario, SMS, cumplimiento regulatorio y más.',
-      en: 'Aeronautical management SaaS platform with full traceability. 10+ modules: fleets, maintenance, inventory, SMS, regulatory compliance and more.',
-    },
-    tags: ['SaaS', 'Multi-tenant', 'Next.js', 'Aviation'],
-    color: '#0c1a3a',
-    accentColor: '#3b82f6',
-    url: 'https://www.mycaliga.com',
-    status: { es: 'En desarrollo activo', en: 'Actively in development' },
-    restricted: false,
-    featured: false,
-    isOwn: true,
   },
 ]
 
@@ -205,9 +180,6 @@ export default function Portfolio() {
   const locale = useLocale() as 'es' | 'en'
   const [activeModal, setActiveModal] = useState<Project | null>(null)
 
-  const featured = projects.find(p => p.featured)!
-  const rest = projects.filter(p => !p.featured)
-
   return (
     <section id="portfolio" className="section-pad bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -220,171 +192,98 @@ export default function Portfolio() {
           <p className="text-gray-500 text-lg">{t('subtitle')}</p>
         </div>
 
-        {/* Featured project — full width */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="group bg-brand-light rounded-2xl overflow-hidden border border-gray-100 hover:border-brand-tech/30 hover:shadow-xl hover:shadow-brand-deep/5 transition-all duration-300 mb-6 cursor-pointer"
-          onClick={() => featured.hasGallery && setActiveModal(featured)}
-        >
-          <div className="grid grid-cols-1 lg:grid-cols-2">
-            {/* Left — visual */}
-            <div
-              className="h-64 lg:h-auto flex items-center justify-center p-8 relative overflow-hidden"
-              style={{ background: featured.color, minHeight: '280px' }}
-            >
-              <div className="absolute inset-0 opacity-10"
-                style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,.8) 1px, transparent 1px)', backgroundSize: '20px 20px' }}
-              />
-              <div className="absolute top-0 left-0 right-0 h-1" style={{ background: featured.accentColor }} />
-
-              <div className="relative z-10 bg-white rounded-2xl p-4 flex items-center justify-center" style={{ width: '180px', height: '180px' }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={featured.logo!} alt={featured.name} className="w-full h-full object-contain" />
-              </div>
-
-              {featured.hasGallery && (
-                <div className="absolute bottom-4 left-4 z-10 flex items-center gap-1.5 bg-white/15 text-white text-xs font-medium px-3 py-1.5 rounded-full backdrop-blur-sm">
-                  <Images size={12} />
-                  {locale === 'es' ? `${featured.screenshots.length} capturas del sistema` : `${featured.screenshots.length} system screenshots`}
-                </div>
-              )}
-
-              <div
-                className="absolute bottom-4 right-4 z-10 flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full"
-                style={{ background: `${featured.accentColor}22`, color: featured.accentColor, border: `1px solid ${featured.accentColor}44` }}
+        {/* Projects — uniform rows, alternating sides */}
+        <div className="space-y-8 mb-12">
+          {projects.map((p, i) => {
+            const flip = i % 2 === 1
+            return (
+              <motion.article
+                key={p.id}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className={`grid grid-cols-1 lg:grid-cols-5 rounded-2xl overflow-hidden border border-gray-200 bg-white hover:shadow-xl hover:shadow-brand-deep/5 transition-shadow duration-300 ${p.hasGallery ? 'cursor-pointer' : ''}`}
+                onClick={() => p.hasGallery && setActiveModal(p)}
               >
-                {featured.status[locale]}
-              </div>
-            </div>
-
-            {/* Right — content */}
-            <div className="p-8 flex flex-col justify-center">
-              <div className="flex items-center gap-2 mb-3">
-                <p className="text-xs font-semibold uppercase tracking-widest text-brand-tech">
-                  {featured.category[locale]}
-                </p>
-                <span className="text-xs bg-brand-red/10 text-brand-red font-medium px-2 py-0.5 rounded-full">
-                  {locale === 'es' ? 'Destacado' : 'Featured'}
-                </span>
-              </div>
-
-              <h3 className="font-sora font-black text-brand-deep text-2xl sm:text-3xl mb-3">
-                {featured.name}
-              </h3>
-
-              <p className="text-brand-red text-sm font-medium mb-3 leading-relaxed">
-                {featured.impact[locale]}
-              </p>
-
-              <p className="text-gray-500 text-sm leading-relaxed mb-5">
-                {featured.desc[locale]}
-              </p>
-
-              <div className="flex flex-wrap gap-2 mb-6">
-                {featured.tags.map((tag) => (
-                  <span key={tag} className="text-xs bg-brand-ice text-brand-tech font-medium px-2.5 py-1 rounded-lg">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              <button
-                onClick={(e) => { e.stopPropagation(); setActiveModal(featured) }}
-                className="inline-flex items-center gap-2 text-brand-tech text-sm font-semibold hover:text-brand-deep transition-colors"
-              >
-                <Images size={14} />
-                {locale === 'es' ? 'Ver capturas del sistema' : 'View system screenshots'}
-                <ArrowRight size={13} />
-              </button>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Rest — two columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          {rest.map((p, i) => (
-            <motion.div
-              key={p.id}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="group bg-brand-light rounded-2xl overflow-hidden border border-gray-100 hover:border-brand-tech/30 hover:shadow-xl hover:shadow-brand-deep/5 transition-all duration-300 flex flex-col"
-            >
-              <div
-                className="h-44 flex items-center justify-center p-6 relative overflow-hidden"
-                style={{ background: p.color }}
-              >
-                <div className="absolute inset-0 opacity-10"
-                  style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,.8) 1px, transparent 1px)', backgroundSize: '20px 20px' }}
-                />
-                <div className="absolute top-0 left-0 right-0 h-1" style={{ background: p.accentColor }} />
-
-                {/* Logo or text for CALIGA */}
-                {p.logo ? (
-                  <div className="relative z-10 rounded-xl flex items-center justify-center" style={{ background: p.logoBg, width: '160px', height: '160px' }}>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={p.logo} alt={p.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-                  </div>
-                ) : (
-                  <div className="relative z-10 flex flex-col items-center justify-center">
-                    <span className="font-sora font-black text-white text-5xl tracking-tight">CALIGA</span>
-                    <span className="text-white/40 text-xs tracking-widest mt-1">AVIATION SaaS</span>
-                  </div>
-                )}
-
-                {/* Own product badge */}
-                {'isOwn' in p && p.isOwn && (
-                  <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 bg-white/15 text-white text-xs font-medium px-2.5 py-1 rounded-full backdrop-blur-sm">
-                    ⭐ {locale === 'es' ? 'Producto propio' : 'Own product'}
-                  </div>
-                )}
-
+                {/* Visual panel */}
                 <div
-                  className="absolute bottom-3 right-3 z-10 flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full"
-                  style={{ background: `${p.accentColor}22`, color: p.accentColor, border: `1px solid ${p.accentColor}44` }}
+                  className={`lg:col-span-2 relative flex items-center justify-center p-10 min-h-[240px] overflow-hidden ${flip ? 'lg:order-2' : ''}`}
+                  style={{ background: p.color }}
                 >
-                  {p.restricted && <Lock size={10} />}
-                  {p.status[locale]}
-                </div>
-              </div>
+                  <div
+                    className="absolute inset-0 opacity-10"
+                    style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,.8) 1px, transparent 1px)', backgroundSize: '20px 20px' }}
+                  />
+                  <div className="absolute top-0 left-0 right-0 h-1" style={{ background: p.accentColor }} />
+                  <span className="absolute top-5 left-6 font-sora font-black text-white/20 text-sm tracking-widest">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
 
-              <div className="p-6 flex flex-col flex-1">
-                <p className="text-xs font-semibold uppercase tracking-widest text-brand-tech mb-1">
-                  {p.category[locale]}
-                </p>
-                <h3 className="font-sora font-bold text-brand-deep text-xl mb-2">{p.name}</h3>
+                  <div className="relative z-10 bg-white rounded-2xl p-5 flex items-center justify-center shadow-lg" style={{ width: '190px', height: '190px' }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={p.logo} alt={p.name} className="w-full h-full object-contain" />
+                  </div>
 
-                <p className="text-brand-red text-xs font-medium mb-3 leading-relaxed">
-                  {p.impact[locale]}
-                </p>
-
-                <p className="text-gray-500 text-sm leading-relaxed mb-5 flex-1">{p.desc[locale]}</p>
-
-                <div className="flex flex-wrap gap-2 mb-5">
-                  {p.tags.map((tag) => (
-                    <span key={tag} className="text-xs bg-brand-ice text-brand-tech font-medium px-2.5 py-1 rounded-lg">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                {p.url && (
-                  <a
-                    href={p.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-brand-tech text-sm font-medium hover:text-brand-deep transition-colors"
+                  <div
+                    className="absolute bottom-4 left-6 z-10 flex items-center gap-2 text-xs font-medium text-white/80"
                   >
-                    {locale === 'es' ? 'Ver proyecto' : 'View project'}
-                    <ExternalLink size={13} />
-                  </a>
-                )}
-              </div>
-            </motion.div>
-          ))}
+                    <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                    {p.status[locale]}
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className={`lg:col-span-3 p-8 sm:p-10 flex flex-col justify-center ${flip ? 'lg:order-1' : ''}`}>
+                  <p className="text-xs font-semibold uppercase tracking-widest text-brand-tech mb-2">
+                    {p.category[locale]}
+                  </p>
+                  <h3 className="font-sora font-black text-brand-deep text-2xl sm:text-3xl mb-4">{p.name}</h3>
+
+                  <p className="text-gray-600 leading-relaxed mb-5">{p.desc[locale]}</p>
+
+                  <div className="border-l-4 pl-4 py-1 mb-6" style={{ borderColor: p.accentColor }}>
+                    <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-1">
+                      {locale === 'es' ? 'Resultado' : 'Outcome'}
+                    </p>
+                    <p className="text-brand-deep text-sm font-medium leading-relaxed">{p.impact[locale]}</p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {p.tags.map((tag) => (
+                      <span key={tag} className="text-xs bg-brand-ice text-brand-tech font-medium px-2.5 py-1 rounded-lg">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-wrap items-center gap-5">
+                    {p.hasGallery && (
+                      <button
+                        onClick={(e) => { e.stopPropagation(); setActiveModal(p) }}
+                        className="inline-flex items-center gap-2 bg-brand-deep hover:bg-brand-tech text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-colors"
+                      >
+                        <Images size={14} />
+                        {locale === 'es' ? `Ver ${p.screenshots.length} capturas` : `View ${p.screenshots.length} screenshots`}
+                        <ArrowRight size={13} />
+                      </button>
+                    )}
+                    {p.url && (
+                      <a
+                        href={p.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="inline-flex items-center gap-2 bg-brand-deep hover:bg-brand-tech text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-colors"
+                      >
+                        {locale === 'es' ? 'Visitar sitio' : 'Visit site'}
+                        <ExternalLink size={13} />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </motion.article>
+            )
+          })}
         </div>
 
         {/* CTA */}

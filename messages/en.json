@@ -94,12 +94,10 @@
     "subtitle": "We don't arrive with a predefined solution. We get involved in your processes.",
     "body": "JCF Tech was born from a simple conviction: businesses don't need generic technology, they need solutions that reflect how they operate, how they think and what they want to project.",
     "body2": "Before proposing anything, we understand your business. Your processes, your team, your customer. Only then do we build — whether it's a custom system, a web platform or an automation — made for you, not adapted from a template.",
-    "stat1": "Projects delivered",
-    "stat2": "Years of experience",
-    "stat3": "Happy clients",
-    "location": "Palmares, Alajuela, Costa Rica",
-    "caligaTag": "Own product",
-    "caligaDesc": "We are also the creators of CALIGA, an aeronautical management SaaS platform with full traceability for aviation operators in Latin America."
+    "stat1": "Systems in production",
+    "stat2": "Templates: every project is built from scratch",
+    "stat3": "Engineers on every project",
+    "location": "Palmares, Alajuela, Costa Rica"
   },
   "portfolio": {
     "tag": "Our work",
@@ -126,6 +124,9 @@
   },
   "footer": {
     "rights": "All rights reserved.",
-    "legal": "Legal ID: 3-102-935084"
+    "legal": "Legal ID: 3-102-935084",
+    "tagline": "Custom software, web and automation for your business.",
+    "whatsapp": "Message us on WhatsApp",
+    "waMessage": "Hello, I saw your website and would like to ask about a project."
   }
 }
