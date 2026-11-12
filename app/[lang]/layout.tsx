@@ -4,6 +4,8 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { Toaster } from 'sonner'
 import StructuredData from '@/components/StructuredData'
+import { Analytics } from '@vercel/analytics/react'
+import WhatsAppButton from '@/components/WhatsAppButton'
 import '../globals.css'
 
 const sora = Sora({
@@ -133,8 +135,10 @@ export default async function LocaleLayout({
       <body className="font-dm bg-brand-light text-gray-900 antialiased">
         <NextIntlClientProvider messages={messages}>
           {children}
+          <WhatsAppButton />
           <Toaster richColors position="bottom-right" />
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   )

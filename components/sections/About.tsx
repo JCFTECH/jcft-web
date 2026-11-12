@@ -6,9 +6,9 @@ import { motion } from 'framer-motion'
 import SectionTag from '@/components/ui/SectionTag'
 
 const stats = [
-  { key: 'stat1', value: '10+' },
-  { key: 'stat2', value: '5+' },
-  { key: 'stat3', value: '100%' },
+  { key: 'stat1', value: '3' },
+  { key: 'stat2', value: '1' },
+  { key: 'stat3', value: '2' },
 ]
 
 export default function About() {

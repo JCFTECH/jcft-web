@@ -22,8 +22,12 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-white/50 text-sm leading-relaxed">
-              {t('hero.subtitle').slice(0, 90)}...
+              {t('footer.tagline')}
             </p>
+            <div className="mt-4 flex items-center gap-4 text-white/60 text-sm">
+              <a href="https://www.instagram.com/jcftech.cr" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>
+              <a href="https://www.facebook.com/share/1E2BL3RN4j/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Facebook</a>
+            </div>
             <div className="mt-4 flex items-center gap-2 text-white/30 text-xs">
               <span>🇨🇷</span>
               <span>{t('about.location')}</span>
