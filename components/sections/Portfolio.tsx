@@ -41,30 +41,6 @@ const projects = [
     restricted: false,
     featured: true,
   },
-  {
-    id: 'aresa',
-    name: 'ARESA S.A.',
-    logo: '/images/portfolio/aresa_logo.png',
-    logoBg: '#ffffff',
-    hasGallery: false,
-    screenshots: [],
-    category: { es: 'Web + Sistema Interno', en: 'Web + Internal System' },
-    impact: {
-      es: 'Presencia digital profesional y gestión operativa centralizada para empresa aeronáutica certificada.',
-      en: 'Professional digital presence and centralized operational management for a certified aeronautical company.',
-    },
-    desc: {
-      es: 'Sitio web corporativo bilingüe (CO OMA-045) + sistema interno de gestión: órdenes de trabajo para aeronaves, inventario, manuales técnicos y control de herramientas.',
-      en: 'Bilingual corporate website (CO OMA-045) + internal management system: aircraft work orders, inventory, technical manuals and tool calibration control.',
-    },
-    tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'i18n'],
-    color: '#1a1a2e',
-    accentColor: '#f0a500',
-    url: 'https://aresacr.net',
-    status: { es: 'En producción', en: 'In production' },
-    restricted: false,
-    featured: false,
-  },
 ]
 
 type Project = typeof projects[0]
